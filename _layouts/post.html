@@ -1,8 +1,16 @@
 ---
-
+layout: default
 ---
 
 <h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string}} - {{ page.author }}</p>
+<p>
+    {{ page.date | date_to_string}}
+    {% assign author = site.authors | where: 'short_name', page.author | first %}
+    <!-- where the short_name in <author>.md matches author in <post>.md,
+        return only to the first value -->
+    {% if author %}
+        - <a href="{{ author.url }}">{{ author.name }}</a>
+    {% endif %}
+</p>
 
 {{ content }}
