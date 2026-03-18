@@ -1,2 +1,19 @@
 collections:
   authors:
+    output: true # each author has their own page
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors" # name of the collection
+    values: 
+      layout: "author" # name of the html for the particular page
+  - scope:
+      path: ""
+      type: "posts"
+    values: 
+      layout: "post"
+  - scope:
+      path: ""
+    values: 
+      layout: "default"
