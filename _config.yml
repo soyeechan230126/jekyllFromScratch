@@ -2,6 +2,8 @@ collections:
   authors:
     output: true # each author has their own page
 
+baseurl: /practice1_jekyllFromScratch # essential upon deployment
+
 defaults:
   - scope:
       path: ""
